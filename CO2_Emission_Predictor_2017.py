@@ -1,11 +1,12 @@
+#the # lines of code where for my insight in the data to choose what to use for prediction :)
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
 df = pd.read_csv("MY2017FuelConsumptionRatings.csv")
 
-print(df.head())
-print(df.describe())
+#print(df.head())
+#print(df.describe())
 
 cdf = df[["ENGINE SIZE","FUEL CONSUMPTION","CO2 EMISSIONS"]]
 print(cdf.head())
@@ -24,6 +25,7 @@ print(cdf.head())
 #plt.ylabel("CO2")
 #plt.show()
 
+#Splitting Data
 msk =np.random.rand(len(df)) < 0.8
 train = cdf[msk]
 test = cdf[~msk]
